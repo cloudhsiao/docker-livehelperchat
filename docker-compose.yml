@@ -2,8 +2,9 @@ version: '2'
 services:
   app:
     build: .
+    image: moshimori/livehelperchat
     ports:
-    - "${EXTERNAL_PORT}:80"
+      - "${EXTERNAL_PORT}:80"
 
   db:
     image: mysql

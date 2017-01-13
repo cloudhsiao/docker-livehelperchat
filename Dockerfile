@@ -1,14 +1,8 @@
-FROM tutum/apache-php:latest
-MAINTAINER jakub.gluszecki@gmail.com
+FROM cthulhu666/docker-livehelperchat
+MAINTAINER cloudhs@gmail.com
 
-ENV DEBIAN_FRONTEND noninteractive
-ENV TAG 2.46v
+ENV TAG 0.1-alpha
 
-RUN apt-get update && \
-    apt-get -y install php5-curl && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
-
-RUN curl -Ls https://github.com/LiveHelperChat/livehelperchat/archive/${TAG}.tar.gz \
-    |  tar xzf - -C /tmp && rm -rf /app && mv -T /tmp/livehelperchat-${TAG}/lhc_web /app
+RUN curl -Ls https://github.com/cloudhsiao/livehelperchat/archive/v${TAG}.tar.gz \
+  | tar xzf - -C /tmp && rm -rf /app && mv -T /tmp/livehelperchat-${TAG}/lhc_web /app
 
