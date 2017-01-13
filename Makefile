@@ -12,6 +12,7 @@ MYSQL_PASSWORD=lhc
 MYSQL_RANDOM_ROOT_PASSWORD=true
 
 build: docker-compose.yml
+	@echo "EXTERNAL_PORT=$(EXTERNAL_PORT)" > .env
 	docker-compose build
 
 start:
