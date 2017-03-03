@@ -1,7 +1,7 @@
 FROM cthulhu666/docker-livehelperchat
 MAINTAINER cloudhs@gmail.com
 
-ENV TAG 0.1-alpha
+ENV TAG 0.2-alpha
 
 RUN apt-get update && apt-get install libapache2-mod-geoip -y && \
     apt-get clean && \
